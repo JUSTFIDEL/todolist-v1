@@ -1,0 +1,24 @@
+{
+  "name": "todolist-v1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JUSTFIDEL/todolist-v1.git"
+  },
+  "author": "Fidelis Adang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JUSTFIDEL/todolist-v1/issues"
+  },
+  "homepage": "https://github.com/JUSTFIDEL/todolist-v1#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  }
+}
