@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const date = require(__dirname + '/date.js')
 const mongoose = require('mongoose')
 const _ = require('lodash')
 
@@ -35,6 +34,7 @@ const del = new Item ({
 
 const defaultItems = [welcome, add, del];
 
+
 const listSchema = {
   name: String,
   items: [itemsSchema]
@@ -47,17 +47,15 @@ const List = mongoose.model('List', listSchema);
 app.get('/', (req, res) => {
 
   Item.find({}, (err, foundItems) => {
-    
-    // const day = date.getDate();
 
-    if (foundItems === 0) {
+    if (foundItems.length === 0) {
       Item.insertMany(defaultItems, (err) => {
         if (err) {
           console.log(err);
         } else {
           console.log('Items have been added succesfully !!!');
         }
-      })
+      });
 
       res.redirect('/');
     
@@ -69,11 +67,8 @@ app.get('/', (req, res) => {
         newListItems: foundItems
 
       });
-
     }
-
   })
-
 })
 
 app.get('/:customListName', (req, res) => {
